@@ -2,7 +2,8 @@
   "name": "ga2-f17337",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
-    "ghcr.io/devcontainers/features/python:1": {}
+    "ghcr.io/devcontainers/features/python:1": {},
+    "ghcr.io/astral-sh/uv/devcontainer-feature:1": {}
   },
   "customizations": {
     "vscode": {
