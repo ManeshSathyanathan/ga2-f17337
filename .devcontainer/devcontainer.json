@@ -2,8 +2,7 @@
   "name": "ga2-f17337",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
-    "ghcr.io/devcontainers/features/python:1": {},
-    "ghcr.io/astral-sh/uv/devcontainer-feature:1": {}
+    "ghcr.io/devcontainers/features/python:1": {}
   },
   "customizations": {
     "vscode": {
@@ -13,5 +12,8 @@
       ]
     }
   },
-  "postCreateCommand": "uv pip install fastapi"
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:/home/vscode/.local/bin"
+  },
+  "postCreateCommand": "set -e; curl -LsSf https://astral.sh/uv/install.sh | env UV_NO_MODIFY_PATH=1 sh; /home/vscode/.local/bin/uv pip install fastapi"
 }
